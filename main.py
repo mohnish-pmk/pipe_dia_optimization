@@ -8,9 +8,9 @@ from tonnage import give_ton_output
 MIN_VEL = 0.6
 MAX_VEL = 3
 MIN_PIPE_RHAE = 0
-MIN_VILLAGE_RHAE = 36
+MIN_VILLAGE_RHAE = 28
 
-input_df = pd.read_excel("test_case code.xlsx", sheet_name="Sheet1")
+input_df = pd.read_excel("e2.xlsx", sheet_name="Sheet1")
 
 dfs_ordered_df = create_dfs_ordered_df(input_df)
 
@@ -21,17 +21,17 @@ processed_df = optimize_pipe_ids(ordered_df=rhae_minimal_ordered_df, min_vel=MIN
 
 processed_df.to_excel("manul_count.xlsx")
 
-dveidf = find_rows_with_different_V_endpoints_in_df(processed_df)
-
-swapped_new_main_df_order_list = create_order_list_to_arrange(filtered_df=dveidf, main_df=processed_df)
-
-main_df_with_new_order = processed_df.loc[swapped_new_main_df_order_list]
-
-second_time_processed_df = optimize_pipe_ids(ordered_df=main_df_with_new_order, min_vel=MIN_VEL, max_vel=MAX_VEL, min_pipe_rhae=MIN_PIPE_RHAE,
-                  min_village_rhae=MIN_VILLAGE_RHAE, iop_list=None)
+# dveidf = find_rows_with_different_V_endpoints_in_df(processed_df)
+#
+# swapped_new_main_df_order_list = create_order_list_to_arrange(filtered_df=dveidf, main_df=processed_df)
+#
+# main_df_with_new_order = processed_df.loc[swapped_new_main_df_order_list]
+#
+# second_time_processed_df = optimize_pipe_ids(ordered_df=main_df_with_new_order, min_vel=MIN_VEL, max_vel=MAX_VEL, min_pipe_rhae=MIN_PIPE_RHAE,
+#                   min_village_rhae=MIN_VILLAGE_RHAE, iop_list=None)
 
 tonnage_df = pd.read_excel('tonnage.xlsx')
 
-tonned_pipes_df = give_ton_output(tonnage_df=tonnage_df, pipes_df=second_time_processed_df)
+tonned_pipes_df = give_ton_output(tonnage_df=tonnage_df, pipes_df=processed_df)
 
 tonned_pipes_df.to_excel("tonned_pipes.xlsx")

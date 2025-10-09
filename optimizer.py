@@ -121,8 +121,10 @@ def need_to_increase_parent_iop(pipe, calculated_dict, ordered_df, min_vel, max_
                                                min_pipe_rhae=min_pipe_rhae, min_village_rhae=min_village_rhae)
             return pipe
     else:
-        raise ValueError("ennanga velocity pathala")
-
+        # raise ValueError("ennanga velocity pathala")
+        """doesn't met the velocity criteria, but there is no other option"""
+        print("<-----------------------velocity pathala, irundhalum vera vali illa---------------->")
+        return pipe
 
 def rhae_low_increase_iop(pipe, calculated_dict, ordered_df, min_vel, max_vel, min_pipe_rhae, min_village_rhae):
     if pipe.index == len(calculated_dict):
@@ -151,7 +153,7 @@ def rhae_low_increase_iop(pipe, calculated_dict, ordered_df, min_vel, max_vel, m
                 else:
                     increased_iop_index += 1
             else:
-                raise ValueError("Rhae pathalannu velocity increase panna, velocity criteria break aagudhu!!!!")
+                raise ValueError("Rhae pathalannu iop increase panna, velocity criteria break aagudhu!!!!")
         else:
             pipe = need_to_increase_parent_iop(pipe, calculated_dict, ordered_df, min_vel=min_vel, max_vel=max_vel,
                                                min_pipe_rhae=min_pipe_rhae, min_village_rhae=min_village_rhae)

@@ -9,6 +9,8 @@ def find_velocity_by_formula(discharge, id_of_pipe):
     velocity = (discharge * 4) / (3.14 * (id_of_pipe / 1000) ** 2)
     return round(velocity, 5)
 
+# print("velocity:", find_velocity_by_formula(0.004284, 96.8))
+
 class Pipe:
     def __init__(self,index, start_node, end_node, length, discharge,
                  ground_level_start, ground_level_end, rhas, manual_iop, min_vel=0.6, max_vel=3,
@@ -60,5 +62,5 @@ class Pipe:
             if self.max_vel >= vel >= self.min_vel:
                 allowed_iops.append(iop)
         if not allowed_iops:
-            allowed_iops = self.iop_list
+            allowed_iops = [self.iop_list[0]]
         return allowed_iops
