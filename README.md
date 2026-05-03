@@ -1,5 +1,7 @@
 # Water Distribution System Pipe Optimization Tool
 
+## this tool is currently deployed for Large Water system design by LARSEN & TOUBRO WET IC
+
 ## Project Overview
 
 This project is an automated pipe diameter optimization system designed for water distribution system planning. It helps engineers optimize pipe sizes in water distribution networks to meet hydraulic requirements while minimizing material costs.
@@ -154,42 +156,10 @@ MIN_PIPE_RHAE = 0      # Minimum pressure at intermediate nodes (m)
 MIN_VILLAGE_RHAE = 28  # Minimum pressure at village endpoints (m)
 ```
 
-## Current Status (75% Complete)
-
-### Completed Features ✅
-- [x] Basic pipe optimization algorithm
-- [x] Hydraulic calculations (velocity, friction head loss, pressure)
-- [x] DFS sorting and network ordering
-- [x] RHae-based reordering
-- [x] Tonnage calculation
-- [x] Material cost estimation
-- [x] Excel input/output handling
-
-### Remaining Work (25%) 🔄
-- [ ] **Error Handling**: Robust error handling for edge cases
-- [ ] **Validation**: Input data validation and sanity checks
-- [ ] **Performance**: Optimization for large networks
+### Remaining Work
 - [ ] **User Interface**: GUI or command-line interface
-- [ ] **Documentation**: API documentation and user manual
-- [ ] **Testing**: Unit tests and integration tests
 - [ ] **Advanced Features**: Multiple optimization algorithms, sensitivity analysis
 
-## Technical Challenges
-
-### 1. Complex Network Topology
-- Handling multiple branches and loops
-- Managing parent-child pipe relationships
-- Cascading effects of diameter changes
-
-### 2. Constraint Satisfaction
-- Balancing velocity and pressure requirements
-- Handling conflicting constraints
-- Ensuring convergence
-
-### 3. Optimization Strategy
-- Minimizing material costs while meeting constraints
-- Handling local minima in optimization
-- Managing computational complexity
 
 ## Usage Example
 
@@ -225,9 +195,6 @@ This project is designed to assist water distribution system planners. Contribut
 - Enhanced user interface
 - Documentation and examples
 
-## Contact
-
-For questions about this project or water distribution system optimization, please refer to the project documentation or contact the development team.
 
 ---
 
