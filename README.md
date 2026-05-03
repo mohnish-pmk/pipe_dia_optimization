@@ -39,7 +39,7 @@ Manual optimization of pipe diameters is time-consuming and error-prone. This to
    - Sorts pipes in depth-first search order
    - Ensures parent pipes are processed before child pipes
 
-5. **RHae-Based Ordering** (`order_by_rhae.py`)
+5. **Residual head -Based Ordering** (`order_by_rhae.py`)
    - Reorders pipes based on residual head at endpoints
    - Optimizes processing sequence for better convergence
 
@@ -56,7 +56,7 @@ Manual optimization of pipe diameters is time-consuming and error-prone. This to
 ```mermaid
 graph TD
     A[Input Excel File] --> B[DFS Sort Pipes]
-    B --> C[RHae-based Reordering]
+    B --> C[Residual head -based Reordering]
     C --> D[Pipe Optimization]
     D --> E{All Constraints Met?}
     E -->|No| F[Increase Pipe Diameter]
