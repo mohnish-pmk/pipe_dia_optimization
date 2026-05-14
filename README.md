@@ -1,6 +1,6 @@
 # Water Distribution System Pipe Optimization Tool
 
-## this tool is currently deployed for Large Water system design by LARSEN & TOUBRO WET IC
+## Developed for application in large-scale water distribution system design workflows at Larsen & Toubro Water & Effluent Treatment IC
 
 ## Project Overview
 
